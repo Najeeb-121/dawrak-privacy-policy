@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Join Dawrak Association</title>
+  <script>
+    const id = new URLSearchParams(window.location.search).get('id');
+    if (id) {
+      window.location.href = 'dawrak://join/' + id;
+    }
+  </script>
+</head>
+<body>
+  <h2>Opening Dawrak...</h2>
+  <p>If the app doesn't open automatically, make sure you have Dawrak installed.</p>
+</body>
+</html>
