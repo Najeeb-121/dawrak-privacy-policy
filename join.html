@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Join Dawrak Association</title>
-  <script>
-    const id = new URLSearchParams(window.location.search).get('id');
-    if (id) {
-      window.location.href = 'dawrak://join/' + id;
-    }
-  </script>
-</head>
+<head><meta charset="utf-8"><title>Join Dawrak</title></head>
 <body>
-  <h2>Opening Dawrak...</h2>
-  <p>If the app doesn't open automatically, make sure you have Dawrak installed.</p>
+<script>
+  var id = new URLSearchParams(window.location.search).get('id');
+  if (id) {
+    window.location.href = 'dawrak://join/' + id;
+  }
+  setTimeout(function () {
+    var ua = navigator.userAgent.toLowerCase();
+    if (/android/.test(ua)) {
+      window.location.href = 'https://play.google.com/store/apps/details?id=com.dawrak.app';
+    } else if (/iphone|ipad|ipod/.test(ua)) {
+      window.location.href = 'https://apps.apple.com/app/idYOUR_APP_ID';
+    } else {
+      document.body.innerHTML = '<p>Please download the Dawrak app to join this association.</p>';
+    }
+  }, 2500);
+</script>
+<p>Opening Dawrak app...</p>
 </body>
 </html>
